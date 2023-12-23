@@ -2,9 +2,9 @@
 
 <body>
     <!-- ... Your HTML and CSS -->
-
-    <input type="file" id="image-upload" multiple>
-    <button id="process-images">Process Images</button>
+    <h1>AED tester</h1>
+    <input type="file" id="image-upload">
+    <button id="process-images">Process AED</button>
     <div id="result"></div>
 
     <script type="importmap">
@@ -39,7 +39,7 @@
             // For text-and-images input (multimodal), use the gemini-pro-vision model
             const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
 
-            const prompt = "What's different between these pictures?";
+            const prompt = "Whats the probability that this is an AED? (just give me the percentage in this format: xxx.xx%)";
 
             const fileInputEl = document.querySelector("#image-upload");
             const imageParts = await Promise.all(
